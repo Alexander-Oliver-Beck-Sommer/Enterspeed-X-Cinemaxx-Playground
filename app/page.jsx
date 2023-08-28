@@ -1,25 +1,16 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { fetchDataFromEnterspeed } from "./utils/enterspeed"; // Adjust the path based on your directory structure
+import React from "react";
+import ESpeed from "./components/ESpeed";
 
 const Page = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const result = await fetchDataFromEnterspeed("home");
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchContent();
-  }, []);
-
-
-  return <div>{data ? JSON.stringify(data.views.home.allContent.frontpageRte) : "Loading..."}</div>;
+  return (
+    <section>
+      <ESpeed
+        view="home"
+        data="views.home.allContent.metaData.name"
+        loading={true}
+      />
+    </section>
+  );
 };
 
 export default Page;
