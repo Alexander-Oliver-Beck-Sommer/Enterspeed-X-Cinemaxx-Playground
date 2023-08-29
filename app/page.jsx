@@ -6,8 +6,9 @@ const Page = () => {
     <section>
       <ESpeed
         view="home"
-        data="views.home.allContent.metaData.name"
+        data="views.home.allContent.frontpageRte"
         loading={true}
+        transform="html"
       />
     </section>
   );

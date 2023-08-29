@@ -1,0 +1,39 @@
+@use "../../scss/variables/index" as *;
+
+.header_container {
+    background-color: $white;
+    padding: rem(20px) rem(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__positioner {
+        max-width: $breakpoint-desktop;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(10px);
+        &__logo {
+            max-width: rem(175px);
+            display: flex;
+        }
+        &__nav {
+            text-transform: uppercase;
+            ul {
+                display: flex;
+                gap: rem(20px);
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        &__hamburger {
+            text-transform: uppercase;
+            width: rem(50px);
+            height: rem(50px);
+            border: solid rem(1px) $darker;
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
