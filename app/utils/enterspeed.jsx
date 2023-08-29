@@ -1,5 +1,3 @@
-// lib/enterspeed.js
-
 const ENTERSPEED_URL = "https://delivery.enterspeed.com/v2";
 
 export const fetchDataFromEnterspeed = async (handle) => {

@@ -1,6 +1,7 @@
 @use "../../scss/variables/index" as *;
 
 .header_container {
+    border-bottom: solid rem(2px) $darker;
     background-color: $white;
     padding: rem(20px) rem(15px);
     display: flex;
@@ -28,8 +29,6 @@
         }
         &__hamburger {
             text-transform: uppercase;
-            width: rem(50px);
-            height: rem(50px);
             border: solid rem(1px) $darker;
             @include tablet {
                 display: none;
