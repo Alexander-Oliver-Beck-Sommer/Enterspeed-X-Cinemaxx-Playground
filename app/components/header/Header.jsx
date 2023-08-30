@@ -1,46 +1,65 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import CinemaxxMonochrome from "@/public/images/logo/cinemaxx-logo-black-and-white.png";
 import Cinemaxx from "@/public/images/logo/cinemaxx-logo.png";
+import CinemaxxShort from "@/public/images/logo/cinemaxx-logo-short.png";
+import Hamburger from "hamburger-react";
 
 const Header = () => {
-  return (
-    <header className={styles.header_container}>
-      <section className={styles.header_container__positioner}>
-        <Link
-          href="/"
-          aria-label="Navigate to frontpage"
-          className={styles.header_container__positioner__logo}
-        >
-          <Image src={CinemaxxMonochrome} alt="Cinemaxx" />
-        </Link>
+  const [isOpen, setIsOpen] = useState(false);  // state to track if the menu is open
 
-        <nav className={styles.header_container__positioner__nav}>
-          <ul>
+  return (
+    <>
+      <header className={styles.header}>
+        <section className={styles.header__container}>
+          <Link
+            href="/"
+            aria-label="Go back home"
+            className={styles.header__container__logo}
+          >
+            <Image priority src={Cinemaxx} alt="Cinemaxx" />
+          </Link>
+          <nav className={styles.header__container__nav}></nav>
+          <div className={styles.header__container__hamburger}>
+            <Hamburger
+              onToggle={(toggled) => {
+                setIsOpen(toggled);  // update the state based on the menu toggle status
+                if (toggled) {
+                  console.log("Menu open!");
+                } else {
+                  console.log("Menu closed!");
+                }
+              }}
+              direction="left"
+              label="Open and close menu"
+            />
+          </div>
+        </section>
+      </header>
+      {isOpen && (  // conditionally render the nav based on the isOpen state
+        <nav className={styles.hamburger_menu}>
+          <ul className={styles.hamburger_menu__container}>
             <li>
-              <Link href="/" aria-label="Navigate to frontpage">
-                <h4>Home</h4>
+              <Link href="/" aria-label="Go to Home">
+                <h3>Home</h3>
               </Link>
             </li>
             <li>
-              <Link href="/movies" aria-label="Navigate to movies">
-                <h4>Movies</h4>
+              <Link href="/movies" aria-label="Go to Movies">
+                <h3>Movies</h3>
               </Link>
             </li>
             <li>
-              <Link href="/testing-playground" aria-label="Navigate to Testing Playground">
-                <h4>Testing Playground</h4>
+              <Link href="/testing-playground" aria-label="Go to Testing Playground">
+                <h3>Testing Playground</h3>
               </Link>
             </li>
           </ul>
         </nav>
-        <button className={styles.header_container__positioner__hamburger}>
-          Hamburger
-        </button>
-      </section>
-    </header>
+      )}
+    </>
   );
 };
 

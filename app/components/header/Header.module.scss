@@ -1,38 +1,73 @@
 @use "../../scss/variables/index" as *;
 
-.header_container {
-    border-bottom: solid rem(2px) $darker;
-    background-color: $white;
-    padding: rem(20px) rem(15px);
+// .header_container {
+//     border-bottom: solid rem(2px) $darker;
+//     background-color: $white;
+//     padding: rem(20px) rem(15px);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     &__positioner {
+//         max-width: $breakpoint-desktop;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         gap: rem(10px);
+//         &__logo {
+//             max-width: rem(175px);
+//             display: flex;
+//         }
+//         &__nav {
+//             text-transform: uppercase;
+//             ul {
+//                 display: flex;
+//                 gap: rem(20px);
+//                 justify-content: center;
+//                 align-items: center;
+//             }
+//         }
+//         &__hamburger {
+//             text-transform: uppercase;
+//             border: solid rem(1px) $darker;
+//             @include tablet {
+//                 display: none;
+//             }
+//         }
+//     }
+// }
+
+.header {
+    background: $white;
     display: flex;
     justify-content: center;
     align-items: center;
-    &__positioner {
+    padding: rem(15px);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         max-width: $breakpoint-desktop;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: rem(10px);
         &__logo {
-            max-width: rem(175px);
             display: flex;
+            max-width: rem(200px);
         }
-        &__nav {
-            text-transform: uppercase;
-            ul {
-                display: flex;
-                gap: rem(20px);
-                justify-content: center;
-                align-items: center;
-            }
-        }
-        &__hamburger {
-            text-transform: uppercase;
-            border: solid rem(1px) $darker;
-            @include tablet {
-                display: none;
-            }
-        }
+    }
+}
+
+.hamburger_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $darker;
+    color: $ghost;
+    &__container {
+        max-width: $breakpoint-desktop;
+        width: 100%;
+        padding: rem(20px) rem(15px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
     }
 }
