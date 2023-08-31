@@ -4,6 +4,32 @@
   box-sizing: border-box;
 }
 
+#espeedComponent {
+  background-color: #000;
+  color: #f7f7f7;
+  padding: rem(50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: rem(20px);
+  a {
+    font-weight: bold;
+    border-bottom: solid rem(2px) #f7f7f7;
+  }
+  & h2 {
+    font-size: $font-32;
+    text-transform: capitalize;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    gap: rem(25px);
+  }
+}
+
 html,
 body {
   padding: 0;

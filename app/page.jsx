@@ -4,12 +4,13 @@ import ESpeed from "./components/ESpeed";
 const Page = () => {
   return (
     <section>
-      {/* <ESpeed
+      <ESpeed
         view="home"
         data="views.home.allContent.frontpageRte"
         loading={true}
         transform="html"
-      /> */}
+        id="espeedComponent"
+      />
     </section>
   );
 };

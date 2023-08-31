@@ -1,6 +1,7 @@
 @use "../../scss/variables/index" as *;
 
 .footer_component {
+    display: none;
     background: $darker;
     color: $ghost;
     padding: rem(15px);
